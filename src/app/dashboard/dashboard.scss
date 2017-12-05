@@ -1,0 +1,115 @@
+.requests-queue-container{
+  padding: 0% 30px 1% 30px;
+
+  button {
+    min-height: 50px !important;
+  }
+
+  input {
+    &:last-child {
+      padding-left: 20px !important;      
+    }
+  }
+
+  .transactions-form {
+    .input-container {
+     padding: 0; 
+    }
+
+    
+  }
+
+  .transactions-results, .transactions-batch-form {
+    margin-top: 70px;
+  }
+
+  .empty-container {
+    .center-align{
+      text-align: center;
+    }
+    .empty-message {
+      font-style: italic;
+      font-size: 16px;
+    }
+  }
+
+  .requests-header-container{
+    div {
+      &.title {
+        padding-left: 0;
+      }
+
+      &.checkboxes {
+        padding-right: 0;
+
+        .show-label{
+          p{
+            color: $black;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 14px;
+            vertical-align: baseline;
+          }
+        }
+        .option{
+          display: inline-block;
+
+          &:not(:last-child){
+            padding-right: 5%;
+          }
+        }
+      }
+    }
+  }
+
+  .requests-table-container{
+    padding-top: 2%;
+
+    .requests-table{
+      tr{
+        td{
+          cursor: pointer;
+          &.subject-label{
+            font-weight: 600;
+            color: $jungle-green;
+          }
+        }
+        &.request-table-nav{
+          &:hover{
+            background-color: $wild-sand;
+          }
+        }
+      }
+    }
+  }
+  .center-align{
+    text-align: start;
+  }
+}
+
+
+[type="checkbox"].filled-in:not(:checked) + label:after {
+    height: 20px;
+    width: 20px;
+    border: 1px solid $silver;
+    background-color: $wild-sand;
+    top: 0px;
+    z-index: 0;
+}
+
+[type="checkbox"] + label.label-font{
+  color: $dove-grey;
+  font-size: 12px;
+  line-height: inherit;
+}
+
+td:last-child{
+  border-right-color: $timberwolf;
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+th.col.s3:last-child {
+  border-right-color: $timberwolf;
+  border-right-style: solid;
+  border-right-width: 1px;
+}

@@ -1,0 +1,486 @@
+/**
+ *  If you want to override some bootstrap variables,
+ *  you have to change values here. The list of variables are listed here
+ *  bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ *
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// injector
+// endinjector
+
+// bower:scss
+// endbower
+
+//Outdated Browser
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+.loader {
+  text-align: center !important;
+}
+
+//Application Styles
+
+
+//ngScrollbar
+div.mCSB_container_wrapper {
+  margin: 0;
+
+  div.mCSB_container {
+    padding: 0;
+  }
+}
+
+//Angular Material Dialog
+md-dialog{
+  max-height: 95%;
+}
+
+.dove-text{
+  color: $dove-grey;
+}
+
+.black-text{
+  color: $black;
+}
+
+p {
+  font-size: 16px;
+  line-height: 22px;
+  color: $dove-grey;
+}
+
+.h1 {
+  @extend .black-text;
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 48px;
+}
+
+.h2 {
+  @extend .black-text;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 42px;
+  color: $shark;
+}
+.h6{
+  color: #242627;
+  font-family: "Open Sans";
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background: $grey-nickel;
+}
+
+a {
+  color: $jungle-green;
+  cursor: pointer;
+}
+
+* {
+  font-family: "Open Sans";
+}
+
+html {
+  font-family: "Open Sans";
+}
+
+button, select, textarea{
+  font-family: "Open Sans";
+}
+
+body {
+  @extend .general-font;
+  height: 100%;
+  width:  100%;
+
+  .container-fluid{
+    padding: 0;
+  }
+}
+
+.fade.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+div#toast-container {
+  & > div {
+    padding: 5%;
+  }
+}
+
+.justify {
+  text-align: justify;
+}
+
+.general-font {
+  color: $dove-grey;
+  font-size: 14px;
+}
+
+#left-panel{
+  padding: 0;
+  width: 65px;
+}
+
+#right-panel{
+  padding: 0;
+  width: 100%;
+  padding-left: 65px;
+  background-color: $white;
+}
+
+.empl-general-button{
+  border: none;
+  background-color: $jungle-green;
+  border-radius: 5px;
+  color: $white;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  box-shadow: none;
+}
+
+button {
+  &.btn{
+    text-transform: none !important;
+    float: none !important;
+    height: 49px;
+
+    &, &:hover{
+      box-shadow: none
+    }
+  }
+
+  &.submit {
+    &,
+    &:focus,
+    &.md-button {
+      @extend .empl-general-button;
+    }
+  }
+
+  &.cancel-button{
+    border: 2px solid $dove-grey;
+    color: $dove-grey;
+    height: 49px;
+    text-transform: none;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: none;
+    line-height: inherit;
+
+    &:hover {
+      background-color: $white !important;
+      border-color: $jungle-green;
+      color: $jungle-green;
+    }
+
+    &.gold {
+      border: 2px solid $jungle-green;
+      color:  $jungle-green;
+
+      &:hover {
+        background-color: $white !important;
+        border-color: $mantis;
+        color: $mantis;
+      }
+    }
+
+    &.md-button.md-ink-ripple {
+      border: 2px solid $dove-grey;
+      color: $dove-grey;
+      text-transform: none;
+      border-radius: 5px;
+    }
+
+    &:not([disabled]){
+      background-color: $white;
+    }
+  }
+
+  &:hover {
+    background-color: $mantis !important;
+  }
+
+  &.attach-button:not([disabled]):hover {
+    background-color: $translucent-silver-chalice !important;
+  }
+
+  &.attach-button {
+    border: 2px solid $jungle-green;
+    color: $jungle-green;
+    height: 49px;
+    text-transform: none;
+    border-radius: 5px;
+    background-color: transparent !important;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: none;
+    line-height: inherit;
+    transition: box-shadow .4s cubic-bezier(.25,.8,.25,1),background-color .4s cubic-bezier(.25,.8,.25,1);
+  }
+
+}
+
+md-dialog {
+  button{
+    @extend .empl-general-button;
+
+    &:hover {
+      background-color: $mantis !important;
+    }
+  }
+
+  .close-button{
+    background: url('../assets/images/Close.svg') center no-repeat;
+    padding-right: 63px;
+    float: right;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+
+
+input[type=checkbox] {
+  width: 0;
+  margin: auto;
+  display: none;
+}
+
+.checkbox:focus {
+  outline: none;
+  border: 0;
+}
+
+input[type=checkbox] + label label {
+  line-height: normal;
+  color: $dove-grey;
+  width: calc(100% - 30px);
+}
+
+input[type=checkbox] + label.required {
+  font-weight: normal;
+  color: $dove-grey;;
+}
+[type="checkbox"].filled-in:checked + label:before {
+    top: 0;
+    left: 1px;
+    width: 8px;
+    height: 13px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid $jungle-green;
+    border-bottom: 2px solid $jungle-green;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+[type="checkbox"].filled-in:checked + label:after {
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $silver;
+  background-color: $white;
+  z-index: 0;
+}
+
+.table-eqb{
+  border: 1px solid $timberwolf;
+
+  &.hovered{
+    tr{
+      &:hover{
+        background-color: $translucent-grey-nickel;
+      }
+    }
+  }
+
+  thead{
+    border: 1px solid $timberwolf;
+    background-color: $wild-sand;
+
+    th{
+      cursor: initial;
+      color: $shark;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 18px;
+      padding-left: 2%;
+      outline: none;
+
+      &.st-sort-ascent:after {
+        content: "\f0d8";
+        font-family: FontAwesome;
+        margin-left: 5px;
+      }
+
+      &.st-sort-descent:after {
+        content: "\f0d7";
+        font-family: FontAwesome;
+        margin-left: 5px;
+      }
+
+      &:not(.st-sort-ascent, .st-sort-descent):after {
+        content: "\f0d7";
+        font-family: FontAwesome;
+        margin-left: 5px;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  tr{
+    border: 1px solid $timberwolf;
+    border-bottom: none;
+    td{
+      cursor: initial;
+      padding-right: 3%;
+      padding-left: 2%;
+      text-align: left;
+    }
+
+    .col{
+      padding: 10px 20px;
+    }
+  }
+}
+
+table.striped > tbody > tr:nth-child(odd) {
+  background-color: $white;
+}
+
+table.striped > tbody > tr:nth-child(even) {
+  background-color: $alabaster;
+}
+
+input, select {
+  width: calc(100% - 24px);
+  border: 1px solid $grey-nickel;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+input[type=checkbox] {
+  width: 0;
+  margin: auto;
+  display: none;
+}
+
+.checkbox:focus {
+  outline: none;
+  border: 0;
+}
+
+input[type=checkbox] + label label {
+  line-height: normal;
+  color: $dove-grey;
+  width: calc(100% - 30px);
+}
+
+input[type=checkbox] + label.required {
+  font-weight: normal;
+  color: $dove-grey;;
+}
+
+input.ng-invalid,
+input.ng-invalid{
+  background-color: #fcedec !important;
+  border: 1px solid $flame-pea;
+}
+
+input.ng-pristine{
+  background-color: white !important;
+  border: 1px solid $grey-nickel !important;
+}
+
+.form-background .form-group > label {
+  color: $shark
+}
+
+.form-background .form-group > input {
+  color: $shark
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]), select:focus {
+  border: 1px solid $grey-nickel!important;
+  box-shadow: none;
+  display: initial;
+  outline: 1px solid $grey-nickel!important;
+}
+
+input, select{
+  border-radius: 4px !important;
+  padding-left: 13px !important;
+  padding-right: 13px !important;
+  padding-bottom: 1%;
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea, select {
+  border: 1px solid $grey-nickel !important;
+  box-shadow: none;
+  display: initial;
+  margin: 0 0 20px 0;
+}
+
+.mortgage-status.danger {
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  width: 90px;
+  padding-left: 5px;
+}
+
+.main-container-view{
+  .stretch-main-container{
+    padding: 0px;
+  }
+}
+
+.non-wrap-container{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.confirmation-modal{
+  padding: 2% 1% 2% 2%;
+  width: 400px;
+}
+
+.left-spaced-small{
+  margin-left: 7%;
+}

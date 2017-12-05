@@ -1,0 +1,187 @@
+<br>
+<div
+  class="container-fluid fade">
+  <div class="requests-queue-container">
+    <div>
+      <div class="row requests-header-container">
+          <div class="col s12 h1 black-text title">
+              Clear Charge
+          </div>
+      </div>
+      <div class="row requests-header-container">
+        <div class="col s5 h2 black-text title">
+            Transactions
+        </div>
+      </div>
+
+      <div
+        class="row requests-table-container">
+        <div class="row">
+          <table
+            class="striped table-eqb requests-table hovered"
+            st-pipe="vm.updateTable"
+            st-table="vm.transactions"
+            refresh-table>
+
+            <thead class="row">
+              <tr class="request-table-nav">
+                <th  class="col s1 subject-label">
+                  #
+                </th>
+                <th  class="col s3">
+                  Transaction
+                </th>
+                <th  class="col s3">
+                  Postal Code
+                </th>
+                <th class="col s3">
+                  URL
+                </th>
+                <th class="col s2">
+                  Score
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="table-hover">
+              <tr
+                data-ng-repeat="row in vm.transactions"
+                class="row">
+                <td class="col s1 ">{{$index}}</td>                
+                <td class="col s3 subject-label tuncate">{{row.description}}</td>
+                <td class="col s3">{{row.postalCode}}</td>
+                <td class="col s3 truncate">
+                  <a  ng-if="row.url"
+                      target="_blank" 
+                      href="{{row.url}}">
+                    {{row.name}}
+                  </a>
+                  <div
+                      ng-if="!row.url">
+                    {{row.name}}
+                  </div>
+                </td>
+                <td class="col s2">{{row.score}}</td>
+              </tr>
+            </tbody>
+            <tbody
+              ng-show="!vm.isLoading && vm.transactions.length === 0"
+              class="empty-container">
+              <tr>
+                <td colspan="2" class="center-align">
+                  <div class="empty-message">Currently there are no transactions!</div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody ng-show="vm.isLoading">
+              <tr>
+                <td colspan="2" class="loader text-center">
+                    <div class="preloader-wrapper small active">
+                      <div class="spinner-layer spinner-yellow-only">
+                        <div class="circle-clipper left">
+                          <div class="circle"></div>
+                        </div><div class="gap-patch">
+                          <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                          <div class="circle"></div>
+                        </div>
+                      </div>
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="transactions-form">
+        <div class="row requests-header-container">
+          <div class="col s5 h2 black-text title">
+            New Transactions
+          </div>
+        </div>
+        <form
+          class="responsive-nav-bar row">
+          <div class="input-container col s6">
+            <input
+              type="text"
+              class="search-input input-responsive col s12"
+              ng-model="vm.form.description"
+              placeholder="Transaction Description">
+            </input>
+          </div>
+          <div class="input-container col s6">
+            <input
+              type="text"
+              class="search-input input-responsive col s11 offset-s1"
+              ng-model="vm.form.postalCode"
+              placeholder="Postal Code"\>
+            </input>
+          </div>
+
+          <button
+            type="submit"
+            class="submit col s6"
+            ng-click="vm.getTransaction()">
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <div class="transactions-results">
+        <div class="row requests-header-container">
+          <div class="col s4 h2 black-text title">
+              Failed
+          </div>
+          <div class="col s4 h2 black-text title">
+              Processed
+          </div>
+          <div class="col s4 h2 black-text title">
+              Match Rate
+          </div>
+          <h2 class="col s4">{{vm.$storage.transactionsFailed}}</h2>          
+          <h2 class="col s4">{{vm.$storage.transactionsProcessed}}</h2>
+          <h2 class="col s4">{{vm.$storage.transactionsProcessed ? (((vm.$storage.transactionsProcessed-vm.$storage.transactionsFailed)*100)/vm.$storage.transactionsProcessed).toFixed(2) : 0}}</h2>
+         </div>
+
+      <div class="transactions-batch-form">
+          <div class="row requests-header-container">
+            <div class="col s5 h1 black-text title">
+              Upload CSV
+            </div>
+          </div>
+          <form
+            class="responsive-nav-bar">
+            <div class="row">
+                <div class="input-container col s6">
+                    <button name="buttonUploadFile"
+                      ng-model="vm.files"
+                      ngf-select
+                      ngf-drop
+                      ngf-keep="false"
+                      ngf-pattern="'.csv'"
+                      ngf-valid-only="true"
+                      class="attach-button gold col s3">
+                      <span>Attach File</span>
+                      <i
+                        class="clip fa fa-paperclip fa-flip-horizontal fa-flip-vertical"
+                        aria-hidden="true">
+                      </i>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-container col s6">
+                    <button
+                      type="submit"
+                      class="submit col s3"
+                      ng-click="vm.uploadCSV()">
+                      Submit
+                  </button>
+                </div>
+            </div>
+          </form>
+        </div>   
+      </div>
+  </div>
+</div>

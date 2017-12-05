@@ -1,0 +1,34 @@
+.pagination{
+  font-size: 12px;
+  text-align: center;
+
+  li{
+    a {
+      font-size: 12px;
+      cursor: pointer;
+
+      &:hover{
+        background-color: $white;
+      }
+
+      span {
+        &.skip-page {
+          color: $jungle-green;
+          &:hover {
+            color: $mantis;
+          }
+        }
+      }
+    }
+
+    &.active {
+      background-color: $jungle-green;
+
+      a{
+        &:hover {
+          background-color: $mantis;
+        }
+      }
+    }
+  }
+}
